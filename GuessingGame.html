@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+    <script>
+       var turn = 0;
+       var N = randnumber();
+       var number = prompt("guesss a number");
+       guess();
+        function randnumber(){
+          var n = parseInt(Math.random()*100+1);
+            return n;
+
+        }
+
+      function guess(){
+          if(number-N==0){alert("Correct, it took you "+turn+" turns.");}
+
+          if(number-N>=1){number=prompt("Too high, guess again.");
+          turn++;guess();}
+
+          if(number-N<1){number=prompt("Too low, guess again.");turn++;guess();}
+      }
+
+    </script>
+
+
+</body>
+
+</html>

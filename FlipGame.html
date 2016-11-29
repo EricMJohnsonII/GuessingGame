@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var turn = 0;
+    var high = 101;
+    var low = 0;
+    var N = parseInt((high-low)/2);
+    guess();
+
+    function guess() {
+
+        var r = prompt(N + "? higher, lower, or correct?");
+
+        if((r=="Correct") || (r=="correct"))
+        alert("I knew it...");
+
+        else if((r=="Higher") || (r=="higher")) {
+            low = N;
+            N = parseInt(low + (high - low) / 2);
+            turn++;
+            guess();
+        }
+
+       else if((r=="Lower") || (r=="lower")) {
+            high = N;
+            N = parseInt(low + (high - low) / 2);
+            turn++;
+            guess();
+        }
+
+
+    }
+</script>
+</body>
+</html>
